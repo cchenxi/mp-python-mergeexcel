@@ -20,8 +20,8 @@ def openOneExcel(excelName=''):
     try:
         book = xlrd.open_workbook(excelName)
         return book
-    except Exception,e:
-        print str(e)
+    except Exception as e:
+        print(e)
 
 '''
 功能：将制定目录下的文件名转换成列表（os.listdir功能更全面，但是本项目只遍历文件，不需要遍历目录）
@@ -59,7 +59,7 @@ def writeToOneExcel(dirName='', toExcelName=''):
     #控制不读取目录中最后一个文件（具体描述见注意事项）
     for afile in filelists[0:-1]:
         lists = readOneExcel(afile)
-        print "%s" % time.ctime()
+        print ("%s" % time.ctime())
         print ("read file %s ..." % afile)
         #根据单元格坐标写入
         for x in range(len(lists)):
